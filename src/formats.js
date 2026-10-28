@@ -23,10 +23,13 @@
         // v0.6 already stores canonical dates inside the note Markdown.
         // Older exports can be rendered correctly without rewriting their original JSON.
         let notes = clean(card.notes?.markdown);
-        for (const item of card.notes?.dates || [])
+        if (!card.notes?.datePillsNormalized)
         {
-            if (!item.displayValue || !item.normalizedDate) continue;
-            notes = notes.split(item.displayValue).join(item.normalizedDate);
+            for (const item of card.notes?.dates || [])
+            {
+                if (!item.displayValue || !item.normalizedDate) continue;
+                notes = notes.split(item.displayValue).join(item.normalizedDate);
+            }
         }
         // Sanitize known SharePoint tracking parameters from earlier exports too.
         return notes.replace(/\[([^\]]+)\]\((https?:\/\/[^)\s]+)\)/g,
