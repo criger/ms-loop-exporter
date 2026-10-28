@@ -4,6 +4,14 @@ A small **Microsoft Edge / Google Chrome extension** for exporting a Microsoft L
 
 **Developed by Cristhian Gertner.** This is an independent, personal open-source project; it is not an official Microsoft or employer product.
 
+## Why this project exists
+
+Microsoft Loop's built-in **Board export to Excel does not include the content of the card's Notes field** (`Additional notes and comments`). While the exported columns are useful, leaving out the notes also leaves behind much of the context: discussions, decisions, progress updates, links, and the details behind each activity.
+
+**Loop Board Exporter was built to close that gap.** It reads the card details already available in your browser and exports both the Board fields **and the complete text of the notes**, making it practical to prepare activity reports, review work, or give the information to an approved AI for summarization.
+
+It does **not** modify your Board or send its contents to an AI service. You remain in control of what you export and share.
+
 ## What it does
 
 - Exports the **current Loop Board view**. Apply any filters in Loop **before** opening a card.
@@ -16,18 +24,18 @@ A small **Microsoft Edge / Google Chrome extension** for exporting a Microsoft L
 
 > **Important:** This is a snapshot of the current card content, **not** a historical audit trail. The active Loop filter determines which cards will be exported.
 
-## Install in Microsoft Edge
+## Install in Edge or Chrome — four easy steps
 
-1. Download this repository as a ZIP (**Code → Download ZIP**) and extract it, or clone the repository.
-2. Open **`edge://extensions`** in Microsoft Edge.
-3. Enable **Developer mode**.
-4. Click **Load unpacked**.
-5. Select the **repository root** — the folder containing `manifest.json`.
-6. Pin **Loop Board Exporter** to the browser toolbar if you wish.
+1. At the top of this GitHub repository, click the green **Code** button and select **Download ZIP**. If you are testing a feature branch, select that branch on GitHub before downloading.
+2. **Extract the ZIP** to a folder on your computer. Keep that folder in place: the browser loads the extension directly from it.
+3. Open **`edge://extensions`** (Microsoft Edge) or **`chrome://extensions`** (Google Chrome), and enable **Developer mode**.
+4. Click **Load unpacked** and select the extracted folder **containing `manifest.json`**.
 
-For Google Chrome, use **`chrome://extensions`**, enable **Developer mode**, and click **Load unpacked**. Select the same repository root.
+**That's it!** Optionally pin **Loop Board Exporter** to your browser toolbar. Open a Loop Board, open any card, and click the extension icon.
 
-When updating a locally loaded extension, replace or update the source folder and select **Reload** on the extension's card. Refresh your Loop browser tab afterwards.
+> **Tip:** Select the folder that contains `manifest.json`, not the ZIP file itself or a parent folder.
+
+**Updating the extension:** Replace or update the files in the same extracted folder, click **Reload** on the extension in `edge://extensions` or `chrome://extensions`, and refresh the Loop tab.
 
 ## Export a Board
 
