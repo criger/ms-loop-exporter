@@ -21,6 +21,7 @@
             html:'Inkluder original HTML',
             htmlHint:'Gir større JSON-fil. Vanligvis unødvendig for AI.',
             start:'Eksporter {count} kort',
+            selected:'{count} kort i gjeldende visning',
             open:'Åpne et kort i Loop først',
             working:'Eksporterer',
             preparing:'Klargjør eksporten …',
@@ -47,6 +48,7 @@
             html:'Include original HTML',
             htmlHint:'Increases JSON size. Usually unnecessary for AI.',
             start:'Export {count} cards',
+            selected:'{count} cards in current view',
             open:'Open a card in Loop first',
             working:'Exporting',
             preparing:'Preparing export…',
@@ -182,7 +184,7 @@
         ui('view').hidden = !pos;
         if (pos)
         {
-            ui('badge').textContent = t('start',{count:pos.total});
+            ui('badge').textContent = t('selected',{count:pos.total});
             ui('view').textContent = t('card',{index:pos.current,total:pos.total}) + ' · ' + t('filters');
         }
         ui('start').disabled = !pos;
