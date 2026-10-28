@@ -1,0 +1,12 @@
+{
+  "manifest_version": 3,
+  "name": "Loop Board Exporter",
+  "short_name": "Loop Export",
+  "description": "Export filtered Microsoft Loop Board cards locally to JSON, Markdown or Excel-compatible CSV.",
+  "version": "0.6.0",
+  "minimum_chrome_version": "116",
+  "permissions": ["activeTab", "scripting", "storage"],
+  "background": {"service_worker": "src/background.js"},
+  "action": {"default_title": "Loop Board Exporter"},
+  "icons": {"16":"icons/icon16.png","32":"icons/icon32.png","48":"icons/icon48.png","128":"icons/icon128.png"}
+}
