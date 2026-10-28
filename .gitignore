@@ -1,0 +1,12 @@
+# Local/browser user data must never be committed
+*.log
+*.jsonl
+exports/
+reports/
+fixtures/private/
+*.crx
+*.pem
+*.key
+.DS_Store
+node_modules/
+coverage/
