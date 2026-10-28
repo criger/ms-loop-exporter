@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Loop Board Exporter · Report</title>
+  <link rel="stylesheet" href="report.css">
+</head>
+<body>
+  <main class="layout">
+    <header class="top"><div class="eyebrow">LOOP BOARD EXPORTER · v0.6</div>
+      <div class="heading"><div><h1 id="title">Your exported report</h1><p id="meta">Loading…</p></div>
+        <label class="lang"><span id="langLabel">Language</span>
+          <select id="language"><option value="en">English</option><option value="no">Norsk</option></select>
+        </label></div>
+    </header>
+    <section class="content">
+      <div class="stats" aria-label="Report summary">
+        <div><strong id="count">—</strong><span id="cardsLabel">Cards</span></div>
+        <div><strong id="fieldCount">—</strong><span id="fieldsLabel">Fields</span></div>
+        <div><strong id="blockCount">—</strong><span id="blocksLabel">Note blocks</span></div>
+        <div><strong id="status">—</strong><span id="statusLabel">Status</span></div>
+      </div>
+      <div id="notice" class="notice" role="status" hidden></div>
+      <section class="report">
+        <div class="tabs" role="tablist" aria-label="Export format">
+          <button type="button" id="jsonTab" role="tab" aria-selected="true" class="selected">JSON</button>
+          <button type="button" id="markdownTab" role="tab" aria-selected="false">Markdown · AI</button>
+          <button type="button" id="csvTab" role="tab" aria-selected="false">CSV · Excel</button>
+        </div>
+        <p id="hint">Structured export of fields and notes</p>
+        <label for="output" id="outputLabel" class="sr-only">Report contents</label>
+        <textarea id="output" readonly spellcheck="false" aria-live="off"></textarea>
+        <div class="actions">
+          <span id="size" aria-live="polite"></span>
+          <div class="buttons">
+            <button id="copy" class="secondary" disabled>Copy</button>
+            <button id="download" class="primary" disabled>Download</button>
+          </div>
+        </div>
+        <p class="feedback" id="feedback" role="status" aria-live="polite"></p>
+      </section>
+      <div class="privacy" id="privacy"></div>
+      <footer><span id="credit">Developed by:</span> <strong>Cristhian Gertner</strong></footer>
+    </section>
+  </main>
+  <script src="../src/formats.js"></script>
+  <script src="../src/report.js"></script>
+</body>
+</html>
