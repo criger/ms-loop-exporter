@@ -77,3 +77,13 @@ test('CSV splits long note text without truncation',() =>
     assert.equal((text.split('\r\n')[1].match(/A/g)||[]).length,61000);
     assert.ok(text.includes('"'+('A'.repeat(30000))+'"'));
 });
+
+test('current exports preserve ordinary prose containing a relative date word',() =>
+{
+    const f = formats();
+    const data = example('Yesterday was a productive day; **Updated** 2026-10-27');
+    data.cards[0].notes.datePillsNormalized = true;
+    const rendered = f.markdown(data,'en');
+    assert.match(rendered,/Yesterday was a productive day/);
+    assert.match(rendered,/Updated\*\* 2026-10-27/);
+});
