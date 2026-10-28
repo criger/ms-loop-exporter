@@ -74,6 +74,6 @@ test('CSV splits long note text without truncation',() =>
     const long = 'A'.repeat(61000);
     const text = formats().csv(example(long));
     assert.ok(text.includes('"Notes 1","Notes 2","Notes 3"'));
-    assert.equal((text.match(/A/g)||[]).length,61000);
+    assert.equal((text.split('\r\n')[1].match(/A/g)||[]).length,61000);
     assert.ok(text.includes('"'+('A'.repeat(30000))+'"'));
 });
