@@ -140,7 +140,7 @@
             if (rawHtml) block.html = paragraph.outerHTML;
             return block;
         });
-        const result = {found:true,blocks,dates,markdown:blocks.map(block => block.markdown).join('\n')};
+        const result = {found:true,blocks,dates,datePillsNormalized:true,markdown:blocks.map(block => block.markdown).join('\n')};
         if (rawHtml) result.html = [...copy.querySelectorAll('.scriptor-pageBody')].map(el=>el.innerHTML).join('\n');
         return result;
     }
